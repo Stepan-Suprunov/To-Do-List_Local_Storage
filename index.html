@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="new-list-button">Начать новый список</button>
+    
+    <form class="add-form" action="#">
+        <input class="add-form-input" type="text" placeholder="Что нужно делать?" required>
+        <button class="add-form-button">Enter</button>
+    </form>
+
+    <ol class="todo-list"></ol>
+
+    <ul class="completed-list"></ul>
+
+    <button class="delete-completed-button">Удалить выполненные</button>
+
+    <template id="task-template">
+        <li class="todo-list-item">
+            <button class="delete-item">X</button>
+            <input type="checkbox" class="complete-item">
+            <span></span>
+        </li>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

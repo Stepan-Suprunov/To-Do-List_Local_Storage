@@ -1,0 +1,5 @@
+.completed-list {
+    list-style: none;
+    text-decoration:line-through;
+    opacity: 50%;
+}
