@@ -3,3 +3,8 @@
     text-decoration:line-through;
     opacity: 50%;
 }
+
+li p {
+    visibility: hidden;
+    height: 0px;
+}
