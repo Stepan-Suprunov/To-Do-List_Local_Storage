@@ -33,9 +33,6 @@ function addTaskHandler (item) {
     const delBtn = item.querySelector('.delete-item');
     delBtn.addEventListener('click', function() {
         todoListArray.forEach(element => {
-            // if (element.id === item.querySelector('p').textContent) {
-            //     element.remove();                                               Почему не работает .remove() ?
-            // };
 
             let temp = [];
             todoListArray.forEach(element => {
@@ -43,7 +40,7 @@ function addTaskHandler (item) {
                     temp.push(element);
                 }
 
-                todoListArray = temp;                                              // Пришлось сменить todoListArray на let
+                todoListArray = temp;                                              
             });
         });
 
@@ -56,7 +53,7 @@ function addElement () {
     const myElement = {
         todo: String,
         property: Boolean,
-        id: Date()                                                    // Почему программа перестаёт работать при исмользовании Date.now(); ?
+        id: Date()                                                    
     };
 
     myElement.todo = newItemTitle.value;
@@ -82,8 +79,6 @@ function dataRestore () {
         const task = newItemTemplate.cloneNode(true);
         task.querySelector('span').textContent = element.todo;
         task.querySelector('p').textContent = element.id;
-
-        //task.querySelector('.complete-item').checked = element.property;    Не понятно, почему не срабатывает присваивание булева значения.
         
         if (element.property === false) {
             todoList.appendChild(task);
@@ -101,7 +96,7 @@ newItemForm.addEventListener('submit', function() {
     const element = addElement ();
     const task = newItemTemplate.cloneNode(true);
     task.querySelector('span').textContent = element.todo; 
-    task.querySelector('p').textContent = element.id;                             // Вопросик. Как избавиться от этого костыля?
+    task.querySelector('p').textContent = element.id;                             
     addTaskHandler(task);
     todoList.appendChild(task);
     newItemTitle.value = '';
@@ -118,11 +113,6 @@ newListBtn.addEventListener('click', function() {
 const completedDelBtn = document.querySelector('.delete-completed-button');
 completedDelBtn.addEventListener('click', function(){
 
-    // todoListArray.forEach(element => {
-    //     if (element.property) {                                                Почему не работает .remove() ?
-    //         element.remove();
-    //     }
-    // });
 
     let temp = [];
     todoListArray.forEach(element => {
@@ -130,7 +120,7 @@ completedDelBtn.addEventListener('click', function(){
             temp.push(element);
         }
 
-        todoListArray = temp;                                                 // Пришлось сменить todoListArray на let
+        todoListArray = temp;                                                 
     });
 
     refreshLocalStorage ();
